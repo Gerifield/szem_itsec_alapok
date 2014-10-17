@@ -1,10 +1,24 @@
 <?php
 
 if(isset($_POST['user'])){
-	var_dump($_POST);
+	echo "Params:<pre>";
+	print_r($_POST);
+	echo "</pre>";
 
+	
+	mysql_connect("127.0.0.1", "root", "");
+	mysql_select_db("szem_db");
+	$res = mysql_query("SELECT * FROM user WHERE name = '".$_POST['user']."' AND password = '".md5($_POST['password'])."'");
+
+	if(mysql_num_rows($res) > 0){
+		echo "<font color='green'>OK!</font>";
+		echo "<pre>";
+		print_r(mysql_fetch_array($res, MYSQL_ASSOC));
+		echo "</pre>";
+	}else{
+		echo "<font color='red'>Error!</font>";
+	}
 }
-
 ?>
 <!DOCTYPE html>
 <html>

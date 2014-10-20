@@ -58,7 +58,9 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
 
 <hr />
-Cím: <a href="http://127.0.0.1/szem/a1-injection/post_get.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a><br />
+Cím: <a href="http://127.0.0.1/szem/a1-injection/post_get.php?id=<?php echo $row['id']; ?>">
+	<?php echo htmlspecialchars($row['title'], ENT_COMPAT, 'UTF-8'); ?>
+</a><br />
 Tartalom: <?php echo $row['body']; ?><br />
 Tulaj: <?php echo $row['name']; ?><br />
 <?php endwhile; ?>

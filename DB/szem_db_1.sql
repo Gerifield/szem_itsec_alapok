@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Hoszt: localhost
--- Létrehozás ideje: 2014. Okt 20. 11:02
+-- Létrehozás ideje: 2014. Okt 20. 23:47
 -- Szerver verzió: 5.6.16
 -- PHP verzió: 5.5.11
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id`, `name`, `password`, `creation_date`) VALUES
 (1, 'user1', '5f0fa8b7a7397a3c1a5e746578bd3e59', '2014-10-17 14:07:58'),
 (2, 'user2', '5f0fa8b7a7397a3c1a5e746578bd3e59', '2014-10-17 14:14:38'),
-(3, 'user3', '5f0fa8b7a7397a3c1a5e746578bd3e59', '2014-10-17 14:14:38');
+(3, 'user3', '21232f297a57a5a743894a0e4a801fc3', '2014-10-17 14:14:38');
 
 --
 -- Megkötések a kiírt táblákhoz

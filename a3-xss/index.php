@@ -53,12 +53,12 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 <br />
 
 <?php
-	$stmt = $pdo->prepare("SELECT * FROM post INNER JOIN user ON user.id = post.user_id ORDER BY post.id DESC");
+	$stmt = $pdo->prepare("SELECT post.*, user.name FROM post INNER JOIN user ON user.id = post.user_id ORDER BY post.id DESC");
 	$stmt->execute();
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
 
 <hr />
-Cím: <?php echo $row['title']; ?><br />
+Cím: <a href="http://127.0.0.1/szem/a1-injection/post_get.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a><br />
 Tartalom: <?php echo $row['body']; ?><br />
 Tulaj: <?php echo $row['name']; ?><br />
 <?php endwhile; ?>
